@@ -2,11 +2,12 @@
     <string name="app_name">FeatureLauncher</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_installed_apps">Installed Apps</string>
     <string name="str_artist_played">Artist Played</string>
     <string name="str_title_played">Title Played</string>
     <string name="str_apps_name">Apps Name</string>
     <string name="str_uninstall">Uninstall</string>
     <string name="str_launch">Launch</string>
+    <string name="str_message_system_app">Can\'t uninstall System Apps</string>
+    <string name="str_fail_launch">Failed to launch App</string>
 </resources>
