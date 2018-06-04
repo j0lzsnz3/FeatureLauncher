@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import de.hdodenhof.circleimageview.CircleImageView
 import tsm.snapkid.featurelauncher.R
 import tsm.snapkid.featurelauncher.models.AppsModel
@@ -35,7 +36,15 @@ class RecyclerViewAdapter(private val context: Context, private val listApps: Li
         holder.btnLaunch.setOnClickListener { launcherUtil.launchAppByPackageName(appsPackageName) }
 
         val packageUri: Uri = Uri.parse("package:$appsPackageName")
-        holder.btnUninstall.setOnClickListener { context.startActivity(Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri)) }
+        holder.btnUninstall.setOnClickListener {
+            if (appsName != null) {
+                if (appsName.contains("System")){
+                    Toast.makeText(context, context.getString(R.string.str_message_system_app), Toast.LENGTH_SHORT).show()
+                }else {
+                    context.startActivity(Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri))
+                }
+            }
+        }
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
