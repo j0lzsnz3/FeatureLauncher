@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_apps.*
 import tsm.snapkid.featurelauncher.R
 import tsm.snapkid.featurelauncher.adapter.RecyclerViewAdapter
 import tsm.snapkid.featurelauncher.models.AppsModel
+import java.util.*
 
 
 class AppsActivity : AppCompatActivity() {
@@ -31,14 +32,21 @@ class AppsActivity : AppCompatActivity() {
         val packs = packageManager.getInstalledPackages(0)
         for (i in packs.indices) {
             val p = packs[i]
-            if (!isSystemPackage(p)) {
-                val appName = p.applicationInfo.loadLabel(packageManager).toString()
-                val icon = p.applicationInfo.loadIcon(packageManager)
-                val appsPackageName = p.applicationInfo.packageName
+            var appName: String
 
-                res.add(AppsModel(icon, appName, appsPackageName))
+            appName = if (!isSystemPackage(p)) {
+                p.applicationInfo.loadLabel(packageManager).toString()
+            }else {
+                p.applicationInfo.loadLabel(packageManager).toString() + " (System)"
             }
+
+            val icon = p.applicationInfo.loadIcon(packageManager)
+            val appsPackageName = p.applicationInfo.packageName
+
+            res.add(AppsModel(icon, appName, appsPackageName))
         }
+
+        res.sortBy { it.appsName }
         listApps = res
 
         Log.d("AppsActivity", "result ${listApps?.get(0)?.appsName}")
