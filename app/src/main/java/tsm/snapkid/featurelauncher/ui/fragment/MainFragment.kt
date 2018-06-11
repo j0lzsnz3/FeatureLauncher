@@ -32,6 +32,6 @@ class MainFragment : Fragment() {
         btn_spotify.setOnClickListener { launcherUtil.launchAppByPackageName("com.spotify.music") }
         btn_apps.setOnClickListener { startActivity(Intent(activity, AppsActivity::class.java)) }
         btn_melon.setOnClickListener { launcherUtil.launchAppByPackageName("com.melon.http") }
-        btn_phone.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.dialer") }
+        btn_music.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.music") }
     }
 }

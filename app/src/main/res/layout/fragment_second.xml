@@ -59,12 +59,12 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
 
     <Button
-        android:id="@+id/btn_calculator"
+        android:id="@+id/btn_phone"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/calculator"
+        android:background="@drawable/phone2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_contact"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         android:background="@drawable/contact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_calculator"
+        app:layout_constraintStart_toEndOf="@+id/btn_phone"
         app:layout_constraintTop_toBottomOf="@+id/btn_browser"
         app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

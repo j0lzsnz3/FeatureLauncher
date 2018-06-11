@@ -27,7 +27,7 @@ class SecondFragment : Fragment() {
         btn_facebook.setOnClickListener { launcherUtil.launchAppByPackageName("com.facebook.lite") }
         btn_contact.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.contacts") }
         btn_browser.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.chrome") }
-        btn_calculator.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.calculator2") }
+        btn_phone.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.dialer") }
         btn_message.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.mms") }
     }
 

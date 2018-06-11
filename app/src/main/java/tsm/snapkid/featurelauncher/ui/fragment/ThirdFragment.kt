@@ -27,6 +27,7 @@ class ThirdFragment : Fragment() {
         val launcherUtil = LauncherUtil(activity)
 
         btn_setting.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.settings") }
+        btn_calculator.setOnClickListener { launcherUtil.launchAppByPackageName("com.android.calculator2") }
 
     }
 }
